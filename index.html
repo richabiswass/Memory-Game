@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Card Game</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+    
+    <div class="game-container">
+        <h1>🧠 Memory Card Game</h1>
+        
+        <div class="game-controls">
+            <div class="game-stats">
+                <div class="stat-item">
+                    <div class="stat-label">Moves</div>
+                    <div class="stat-value" id="moves">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Time</div>
+                    <div class="stat-value" id="timer">00:00</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Best Moves</div>
+                    <div class="stat-value" id="bestMoves">-</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Best Time</div>
+                    <div class="stat-value" id="bestTime">-</div>
+                </div>
+            </div>
+            
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" data-difficulty="easy">Easy (4x3)</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium (4x4)</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard (6x4)</button>
+            </div>
+            
+            <button class="new-game-btn" onclick="startNewGame()">New Game</button>
+        </div>
+        
+        <div class="game-board easy" id="gameBoard">
+            <!-- Cards will be generated here -->
+        </div>
+    </div>
+
+    <!-- Congratulations Modal -->
+    <div class="congratulations" id="congratulations">
+        <div class="congratulations-content">
+            <h2>🎉 Congratulations!</h2>
+            <p>You've successfully matched all pairs!</p>
+            <div class="final-stats">
+                <p><strong>Final Time:</strong> <span id="finalTime">00:00</span></p>
+                <p><strong>Total Moves:</strong> <span id="finalMoves">0</span></p>
+            </div>
+            <button class="close-btn" onclick="closeModal()">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
